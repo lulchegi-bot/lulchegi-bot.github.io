@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CCF | ሰውን መርዳት</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  background:#f5f8fc;
+  color:#172033;
+  line-height:1.7;
+}
+
+header{
+  background:#ffffff;
+  padding:18px 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 2px 12px rgba(0,0,0,.08);
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+.logo{
+  font-size:28px;
+  font-weight:bold;
+  color:#1261a0;
+}
+
+nav a{
+  text-decoration:none;
+  color:#333;
+  margin-left:22px;
+  font-weight:bold;
+}
+
+.hero{
+  min-height:80vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:60px 7%;
+  background:linear-gradient(135deg,#1261a0,#19a974);
+  color:white;
+}
+
+.hero h1{
+  font-size:52px;
+  margin-bottom:20px;
+}
+
+.hero p{
+  font-size:21px;
+  max-width:750px;
+  margin:auto;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:30px;
+  padding:14px 28px;
+  background:white;
+  color:#1261a0;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+section{
+  padding:70px 7%;
+}
+
+.title{
+  text-align:center;
+  margin-bottom:45px;
+}
+
+.title h2{
+  font-size:34px;
+  color:#1261a0;
+  margin-bottom:10px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:white;
+  padding:30px;
+  border-radius:18px;
+  box-shadow:0 5px 20px rgba(0,0,0,.08);
+  text-align:center;
+}
+
+.card h3{
+  color:#1261a0;
+  margin-bottom:12px;
+}
+
+.icon{
+  font-size:45px;
+  margin-bottom:15px;
+}
+
+.about{
+  background:white;
+}
+
+.contact{
+  background:#eaf4ff;
+}
+
+.contact-box{
+  max-width:700px;
+  margin:auto;
+  background:white;
+  padding:35px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.contact-box p{
+  margin:12px 0;
+  font-size:18px;
+}
+
+footer{
+  background:#102a43;
+  color:white;
+  text-align:center;
+  padding:30px;
+}
+
+@media(max-width:700px){
+  nav a{
+    display:none;
+  }
+
+  .hero h1{
+    font-size:38px;
+  }
+
+  .hero p{
+    font-size:18px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">CCF</div>
+
+  <nav>
+    <a href="#home">መነሻ</a>
+    <a href="#about">ስለ CCF</a>
+    <a href="#programs">ፕሮግራሞች</a>
+    <a href="#contact">ያግኙን</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div>
+    <h1>CCF</h1>
+    <p>
+      ሰውን መርዳት፣ ተስፋን ማበረታታት
+      እና የተሻለ ሕይወት ለመፍጠር አብረን እንሰራለን።
+    </p>
+    <a href="#contact" class="btn">እኛን ያግኙ</a>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="title">
+    <h2>ስለ CCF</h2>
+    <p>ሰዎችን እና ማህበረሰቦችን ለመደገፍ የምንሰራ ድርጅት</p>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="icon">🤝</div>
+      <h3>ተልዕኮ</h3>
+      <p>
+        በእርዳታ እና በድጋፍ የሚፈልጉ ሰዎችን
+        መርዳት እና ማበረታታት።
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🌍</div>
+      <h3>ራዕይ</h3>
+      <p>
+        ሰዎች በተስፋ፣ በክብር እና በተሻለ ሕይወት
+        የሚኖሩበትን ጠንካራ ማህበረሰብ መፍጠር።
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="programs">
+  <div class="title">
+    <h2>ዋና ፕሮግራማችን</h2>
+    <p>ለሰዎች ተጨባጭ ድጋፍ ማድረስ</p>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="icon">❤️</div>
+      <h3>እርዳታ</h3>
+      <p>
+        በእርዳታ የሚፈልጉ ሰዎችን በተቻለ መጠን
+        መደገፍ እና መርዳት።
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🌱</div>
+      <h3>ማህበረሰብ</h3>
+      <p>
+        የማህበረሰብ ተስፋን ማጠናከር እና
+        ለተሻለ ነገ መስራት።
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">✨</div>
+      <h3>ተስፋ</h3>
+      <p>
+        ሰዎች አዲስ ተስፋ እንዲያገኙ
+        የሚያግዙ ድጋፎችን ማበረታታት።
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="title">
+    <h2>የምንከተላቸው እሴቶች</h2>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <h3>ክብር</h3>
+      <p>እያንዳንዱን ሰው በክብር እንመለከታለን።</p>
+    </div>
+
+    <div class="card">
+      <h3>ታማኝነት</h3>
+      <p>በታማኝነት እና በሃላፊነት እንሰራለን።</p>
+    </div>
+
+    <div class="card">
+      <h3>ትብብር</h3>
+      <p>ለተሻለ ውጤት አብረን እንሰራለን።</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="title">
+    <h2>ያግኙን</h2>
+    <p>ለተጨማሪ መረጃ ከእኛ ጋር ይገናኙ</p>
+  </div>
+
+  <div class="contact-box">
+    <p>📞 <strong>ስልክ:</strong> 0978242462</p>
+    <p>✉️ <strong>Email:</strong> lulchegi@gmail</p>
+    <p>📍 <strong>አካባቢ:</strong> Ethiopia</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 CCF — ሰውን መርዳት</p>
+  <p>ተስፋ • ክብር • እርዳታ</p>
+</footer>
+
+</body>
+</html>
