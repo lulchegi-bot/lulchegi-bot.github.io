@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="am">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CCF | ሰውን መርዳት</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,"Noto Sans Ethiopic",sans-serif;background:#f6f9fb;color:#18323b;line-height:1.7}
+a{text-decoration:none;color:inherit}
+header{position:sticky;top:0;z-index:20;background:#fff;box-shadow:0 3px 18px #0001}
+.nav{max-width:1100px;margin:auto;padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-size:26px;font-weight:900;color:#117b83}
+.logo span{display:block;font-size:11px;color:#667}
+nav{display:flex;gap:8px;flex-wrap:wrap}
+nav a{padding:8px 12px;border-radius:20px;font-weight:700;color:#36535c}
+nav a:hover{background:#e8f5f4;color:#117b83}
+.hero{min-height:78vh;display:flex;align-items:center;background:linear-gradient(120deg,#087b8d,#36b69d);position:relative;overflow:hidden;color:white}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#006b78aa,#2ba99055)}
+.hero-bg{position:absolute;inset:0;background:url("file_00000000239c82088d3e82de78c3d8b2.png") center/cover;opacity:.18}
+.hero-inner{position:relative;z-index:1;max-width:1100px;margin:auto;width:100%;padding:80px 24px}
+.badge{display:inline-block;border:1px solid #ffffff99;border-radius:30px;padding:8px 18px;font-weight:800}
+h1{font-size:clamp(44px,9vw,82px);line-height:1;margin:25px 0 12px}
+.hero h2{font-size:clamp(25px,5vw,45px);max-width:700px}
+.hero p{font-size:18px;max-width:700px;margin:18px 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 24px;border-radius:30px;font-weight:900;border:2px solid white;background:white;color:#087b8d;cursor:pointer}
+.btn.alt{background:transparent;color:white}
+.btn.help{background:#ffc400;border-color:#ffc400;color:#24333a}
+section{max-width:1100px;margin:auto;padding:80px 22px}
+.section-title{text-align:center;margin-bottom:42px}
+.section-title h2{font-size:34px;color:#0b6872}
+.section-title p{color:#61757b}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
+.about img{width:100%;height:350px;object-fit:cover;border-radius:28px;box-shadow:0 15px 35px #0002}
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:white;border-radius:22px;padding:26px;box-shadow:0 8px 25px #1231;border:1px solid #e4eeee;transition:.2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 15px 35px #1232}
+.card h3{color:#087b83;margin-bottom:9px}
+.clickable{cursor:pointer}
+.icon{font-size:34px;margin-bottom:10px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.stat{text-align:center;background:#0b6872;color:white;border-radius:20px;padding:25px}
+.stat strong{display:block;font-size:36px}
+.gallery{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.gallery img{width:100%;height:170px;object-fit:cover;border-radius:16px}
+.donate{background:linear-gradient(135deg,#0b6872,#18a88e);color:white;border-radius:30px;padding:45px 28px;text-align:center}
+.donate h2{font-size:34px}
+.donate p{max-width:700px;margin:10px auto 22px}
+.methods{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:25px}
+.method{background:#ffffff18;border:1px solid #ffffff55;border-radius:18px;padding:22px}
+.contact{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+footer{background:#122b32;color:#d8e7e9;text-align:center;padding:35px 20px}
+.modal{display:none;position:fixed;inset:0;background:#0009;z-index:50;padding:20px;align-items:center;justify-content:center}
+.modal.show{display:flex}
+.modal-box{background:white;max-width:620px;width:100%;max-height:85vh;overflow:auto;border-radius:24px;padding:30px;position:relative}
+.close{position:absolute;right:15px;top:10px;border:0;background:#edf3f4;border-radius:50%;width:38px;height:38px;font-size:23px;cursor:pointer}
+.modal-box h2{color:#087b83;margin-bottom:12px}
+@media(max-width:800px){
+ nav{display:none}.about{grid-template-columns:1fr}.card-grid{grid-template-columns:1fr}
+ .stats{grid-template-columns:repeat(2,1fr)}.gallery{grid-template-columns:repeat(2,1fr)}
+ .methods,.contact{grid-template-columns:1fr}.hero-inner{padding:70px 22px}
+}
+</style>
+</head>
+<body>
+<header><div class="nav"><div class="logo">CCF<span>ሰውን መርዳት</span></div>
+<nav><a href="#home">መነሻ</a><a href="#about">ስለ CCF</a><a href="#programs">ፕሮግራሞች</a><a href="#gallery">ምስሎች</a><a href="#contact">ያግኙን</a></nav></div></header>
+
+<main id="home">
+<section class="hero"><div class="hero-bg"></div><div class="hero-inner">
+<span class="badge">CCF • እርዳታ እና ተጽእኖ</span>
+<h1>CCF</h1><h2>ሰውን መርዳት፣ ተስፋን ማብራት</h2>
+<p>ለሰዎች እርዳታ እና ለማህበረሰብ የተሻለ እድል ለመፍጠር እንሰራለን።</p>
+<div class="btns"><a class="btn" href="#about">ስለ እኛ ይወቁ</a><a class="btn alt" href="#programs">ፕሮግራሞች</a><button class="btn help" onclick="openModal('donateModal')">❤️ እርዳታ ይስጡ</button></div>
+</div></section>
+
+<section id="about"><div class="section-title"><h2>ስለ CCF</h2><p>ስለ ድርጅቱ እና ዓላማችን</p></div>
+<div class="about"><img src="file_000000006d988208b497db0eb8080237.png" alt="CCF">
+<div class="card clickable" onclick="openModal('aboutModal')"><div class="icon">🌍</div><h3>CCF ማን ነው?</h3><p>ይህን ካርድ ይንኩ ሙሉ ማብራሪያውን ለማየት።</p></div></div></section>
+
+<section><div class="card-grid">
+<div class="card clickable" onclick="openModal('missionModal')"><div class="icon">🎯</div><h3>ተልዕኮ</h3><p>ይንኩ → የተልዕኮ ማብራሪያ</p></div>
+<div class="card clickable" onclick="openModal('visionModal')"><div class="icon">👁️</div><h3>ራእይ</h3><p>ይንኩ → የራእይ ማብራሪያ</p></div>
+<div class="card clickable" onclick="openModal('valuesModal')"><div class="icon">🤝</div><h3>እሴቶች</h3><p>ይንኩ → የእሴቶች ማብራሪያ</p></div>
+</div></section>
+
+<section id="programs"><div class="section-title"><h2>ፕሮግራሞች</h2><p>እያንዳንዱን ፕሮግራም በመንካት ዝርዝሩን ይመልከቱ።</p></div>
+<div class="card-grid">
+<div class="card clickable" onclick="openModal('aidModal')"><div class="icon">❤️</div><h3>እርዳታ</h3><p>ለተቸገሩ ሰዎች ድጋፍ።</p></div>
+<div class="card clickable" onclick="openModal('eduModal')"><div class="icon">📚</div><h3>ትምህርት</h3><p>የትምህርት ድጋፍ እና እድል።</p></div>
+<div class="card clickable" onclick="openModal('waterModal')"><div class="icon">💧</div><h3>ንፁህ ውሃ</h3><p>ለማህበረሰብ የውሃ ድጋፍ።</p></div>
+<div class="card clickable" onclick="openModal('communityModal')"><div class="icon">🏘️</div><h3>ማህበረሰብ</h3><p>ማህበረሰብን ማጠናከር።</p></div>
+</div></section>
+
+<section><div class="stats"><div class="stat"><strong>❤️</strong>እርዳታ</div><div class="stat"><strong>🤝</strong>ትብብር</div><div class="stat"><strong>🌱</strong>ተጽእኖ</div><div class="stat"><strong>✨</strong>ተስፋ</div></div></section>
+
+<section id="gallery"><div class="section-title"><h2>ምስሎች</h2><p>የስራችን እና የተጽእኖአችን ምስሎች</p></div>
+<div class="gallery">
+<img src="file_00000000239c82088d3e82de78c3d8b2.png"><img src="file_000000006d988208b497db0eb8080237.png">
+<img src="file_000000007d1482089ec36208840a9fd9.png"><img src="file_00000000848c8208951ab07e0a35c6d9.png"><img src="file_000000009c1c8208a10171bb5c69f442.png">
+</div></section>
+
+<section><div class="section-title"><h2>የምንመራባቸው እሴቶች</h2></div>
+<div class="card-grid">
+<div class="card clickable" onclick="openModal('respectModal')"><h3>ክብር</h3><p>ይንኩ</p></div>
+<div class="card clickable" onclick="openModal('trustModal')"><h3>ታማኝነት</h3><p>ይንኩ</p></div>
+<div class="card clickable" onclick="openModal('teamModal')"><h3>ትብብር</h3><p>ይንኩ</p></div>
+<div class="card clickable" onclick="openModal('impactModal')"><h3>ተጽእኖ</h3><p>ይንኩ</p></div>
+</div></section>
+
+<section><div class="donate"><h2>❤️ እርዳታ ለመስጠት ይፈልጋሉ?</h2><p>CCFን ለመደገፍ የሚቻሉ የክፍያ መንገዶችን እዚህ ማስገባት እንችላለን። እስካሁን ያልተረጋገጠ የባንክ ወይም የክፍያ መረጃ አልጨመርንም።</p>
+<div class="methods"><div class="method">🏦<br><b>ባንክ</b><br>የባንክ መረጃ ሲኖር እዚህ ይገባል።</div><div class="method">📱<br><b>ሞባይል ክፍያ</b><br>የተረጋገጠ ቁጥር ሲኖር እዚህ ይገባል።</div><div class="method">📞<br><b>በቀጥታ ያግኙን</b><br>0978242462</div></div>
+</div></section>
+
+<section id="contact"><div class="section-title"><h2>ያግኙን</h2></div><div class="contact">
+<div class="card"><h3>📞 ስልክ</h3><p>0978242462</p></div><div class="card"><h3>✉️ Email</h3><p>lulchegi@gmail</p></div><div class="card"><h3>📍 አካባቢ</h3><p>Ethiopia</p></div>
+</div></section>
+</main>
+<footer>© CCF — ሰውን መርዳት • ተስፋን ማብራት</footer>
+
+<div class="modal" id="aboutModal" onclick="outsideClose(event)"><div class="modal-box"><button class="close" onclick="closeModal('aboutModal')">×</button><h2>ስለ CCF</h2><p>CCF ሰዎችን ለመርዳት እና ማህበረሰቦችን ለመደገፍ የሚሰራ ድርጅት ነው። ሰው ሁሉ ተስፋ፣ ክብር እና የተሻለ ሕይወት እድል ሊኖረው እንደሚገባ እናምናለን።</p></div></div>
+<div class="modal" id="missionModal" onclick="outsideClose(event)"><div class="modal-box"><button class="close" onclick="closeModal('missionModal')">×</button><h2>🎯 ተልዕኮ</h2><p>በችግር ውስጥ ላሉ ሰዎች ተገቢ እርዳታና ድጋፍ በመስጠት ሕይወታቸውን ማሻሻል።</p></div></div>
+<div class="modal" id="visionModal" onclick="outsideClose(event)"><div class="modal-box"><button class="close" onclick="closeModal('visionModal')">×</button><h2>👁️ ራእይ</h2><p>ሰዎች በተስፋ፣ በክብር እና በተሻለ እድል የሚኖሩበት ጠንካራ ማህበረሰብ መፍጠር።</p></div></div>
+<div class="modal" id="valuesModal" onclick="outsideClose(event)"><div class="modal-box"><button class="close" onclick="closeModal('valuesModal')">×</button><h2>🤝 እሴቶች</h2><p>ክብር፣ ታማኝነት፣ ትብብር እና ተጽእኖ በስራችን ሁሉ የምንከተላቸው መርሆች ናቸው።</p></div></div>
+<div class="modal" id="aidModal" onclick="outsideClose(event)"><div class="modal-box"><button class="close" onclick="closeModal('aidModal')">×</button><h2>❤️ እርዳታ</h2><p>በተቸገሩ ሰዎች ላይ ያተኮረ የእርዳታ እና ድጋፍ ስራ።</p></div></div>
+<div class="modal" id="eduModal" onclick="outsideClose(event)"><div class="modal-box"><button class="close" onclick="closeModal('eduModal')">×</button><h2>📚 ትምህርት</h2><p>ልጆችና ወጣቶች የትምህርት እድል እንዲያገኙ የሚደረግ ድጋፍ።</p></div></div>
+<div class="modal" id="waterModal" onclick="outsideClose(event)"><div class="modal-box"><button class="close" onclick="closeModal('waterModal')">×</button><h2>💧 ንፁህ ውሃ</h2><p>ማህበረሰቦች ንፁህና ደህንነቱ የተጠበቀ ውሃ እንዲያገኙ የሚደረግ ድጋፍ።</p></div></div>
+<div class="modal" id="communityModal" onclick="outsideClose(event)"><div class="modal-box"><button class="close" onclick="closeModal('communityModal')">×</button><h2>🏘️ ማህበረሰብ</h2><p>ትብብርን በማጠናከር ማህበረሰቦች የተሻለ እድል እንዲፈጥሩ መደገፍ።</p></div></div>
+<div class="modal" id="donateModal" onclick="outsideClose(event)"><div class="modal-box"><button class="close" onclick="closeModal('donateModal')">×</button><h2>❤️ እርዳታ ይስጡ</h2><p>ለእርዳታ መስጠት የሚጠቀሙበት የተረጋገጠ የባንክ/ሞባይል ክፍያ መረጃ ካለ እንጨምረዋለን። ለአሁኑ በስልክ ያግኙን፦ <a href="tel:0978242462"><b>0978242462</b></a></p></div></div>
+<div class="modal" id="respectModal" onclick="outsideClose(event)"><div class="modal-box"><button class="close" onclick="closeModal('respectModal')">×</button><h2>ክብር</h2><p>ሰውን ሁሉ በክብር፣ በእኩልነት እና በክብደት መመልከት።</p></div></div>
+<div class="modal" id="trustModal" onclick="outsideClose(event)"><div class="modal-box"><button class="close" onclick="closeModal('trustModal')">×</button><h2>ታማኝነት</h2><p>በግልፅነት እና በኃላፊነት መስራት።</p></div></div>
+<div class="modal" id="teamModal" onclick="outsideClose(event)"><div class="modal-box"><button class="close" onclick="closeModal('teamModal')">×</button><h2>ትብብር</h2><p>ከሰዎችና ከማህበረሰቦች ጋር በመተባበር የተሻለ ውጤት ማምጣት።</p></div></div>
+<div class="modal" id="impactModal" onclick="outsideClose(event)"><div class="modal-box"><button class="close" onclick="closeModal('impactModal')">×</button><h2>ተጽእኖ</h2><p>የሚታይ እና ዘላቂ ለውጥ ለማምጣት መስራት።</p></div></div>
+
+<script>
+function openModal(id){document.getElementById(id).classList.add("show");document.body.style.overflow="hidden"}
+function closeModal(id){document.getElementById(id).classList.remove("show");document.body.style.overflow=""}
+function outsideClose(e){if(e.target===e.currentTarget)closeModal(e.currentTarget.id)}
+document.addEventListener("keydown",e=>{if(e.key==="Escape")document.querySelectorAll(".modal.show").forEach(m=>closeModal(m.id))})
+</script>
+</body>
+</html>
