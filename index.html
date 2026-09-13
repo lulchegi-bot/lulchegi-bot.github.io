@@ -7,906 +7,806 @@
 <title>CCF | ሰውን መርዳት</title>
 
 <style>
-
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 html{
-scroll-behavior:smooth;
+  scroll-behavior:smooth;
 }
 
 body{
-font-family:Arial,sans-serif;
-background:#f5f8fc;
-color:#172033;
-line-height:1.7;
+  font-family:Arial,"Noto Sans Ethiopic",sans-serif;
+  background:#f5f8fc;
+  color:#172033;
+  line-height:1.7;
 }
 
+:root{
+  --blue:#0868a8;
+  --deep:#064b7a;
+  --green:#16a477;
+  --light:#eaf6ff;
+  --white:#fff;
+  --dark:#102a43;
+}
+
+/* HEADER */
 header{
-position:sticky;
-top:0;
-z-index:1000;
-background:rgba(255,255,255,.96);
-backdrop-filter:blur(10px);
-box-shadow:0 3px 18px rgba(0,0,0,.08);
-padding:16px 6%;
-display:flex;
-align-items:center;
-justify-content:space-between;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,.97);
+  box-shadow:0 4px 20px rgba(0,0,0,.08);
+  padding:15px 6%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
 
 .logo{
-display:flex;
-align-items:center;
-gap:10px;
-font-size:28px;
-font-weight:900;
-color:#1261a0;
+  display:flex;
+  align-items:center;
+  gap:9px;
+  font-size:29px;
+  font-weight:900;
+  color:var(--blue);
 }
 
 .logo span{
-font-size:30px;
+  font-size:28px;
 }
 
 nav{
-display:flex;
-gap:24px;
+  display:flex;
+  gap:24px;
 }
 
 nav a{
-text-decoration:none;
-color:#263238;
-font-weight:bold;
+  text-decoration:none;
+  color:#263238;
+  font-weight:bold;
 }
 
 nav a:hover{
-color:#1261a0;
+  color:var(--blue);
 }
 
+/* HERO */
 .hero{
-min-height:88vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:80px 7%;
-color:white;
-background:
-linear-gradient(135deg,rgba(18,97,160,.94),rgba(25,169,116,.90)),
-url("file_00000000239c82088d3e82de78c3d8b2.png");
-background-size:cover;
-background-position:center;
+  min-height:88vh;
+  display:flex;
+  align-items:center;
+  padding:80px 7%;
+  color:white;
+  position:relative;
+  overflow:hidden;
+
+  background:
+  linear-gradient(90deg,rgba(3,53,88,.92),rgba(8,104,168,.58)),
+  url("file_000000009c1c8208a10171bb5c69f442.png");
+
+  background-size:cover;
+  background-position:center;
 }
 
 .hero-content{
-max-width:850px;
+  max-width:720px;
+  position:relative;
+  z-index:2;
 }
 
 .badge{
-display:inline-block;
-padding:8px 18px;
-border:1px solid rgba(255,255,255,.5);
-border-radius:30px;
-margin-bottom:22px;
-font-weight:bold;
+  display:inline-block;
+  padding:8px 18px;
+  border:1px solid rgba(255,255,255,.55);
+  border-radius:30px;
+  margin-bottom:20px;
+  font-weight:bold;
+  background:rgba(255,255,255,.08);
 }
 
 .hero h1{
-font-size:60px;
-margin-bottom:18px;
-font-weight:900;
+  font-size:64px;
+  line-height:1.1;
+  margin-bottom:12px;
+  font-weight:900;
 }
 
 .hero h2{
-font-size:28px;
-margin-bottom:18px;
+  font-size:30px;
+  margin-bottom:18px;
 }
 
 .hero p{
-font-size:20px;
-max-width:700px;
-margin:auto;
+  font-size:19px;
+  max-width:650px;
 }
 
 .buttons{
-margin-top:32px;
-display:flex;
-justify-content:center;
-gap:14px;
-flex-wrap:wrap;
+  margin-top:30px;
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
 }
 
 .btn{
-display:inline-block;
-padding:14px 28px;
-border-radius:30px;
-text-decoration:none;
-font-weight:bold;
-transition:.3s;
+  display:inline-block;
+  padding:14px 27px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:.3s;
 }
 
 .btn-primary{
-background:white;
-color:#1261a0;
+  background:white;
+  color:var(--blue);
 }
 
 .btn-secondary{
-border:2px solid white;
-color:white;
+  border:2px solid white;
+  color:white;
 }
 
 .btn:hover{
-transform:translateY(-3px);
+  transform:translateY(-4px);
 }
 
+/* SECTIONS */
 section{
-padding:85px 7%;
+  padding:85px 7%;
 }
 
 .title{
-text-align:center;
-max-width:750px;
-margin:0 auto 50px;
+  text-align:center;
+  max-width:760px;
+  margin:0 auto 48px;
 }
 
 .title h2{
-font-size:38px;
-color:#1261a0;
-margin-bottom:12px;
+  font-size:38px;
+  color:var(--blue);
+  margin-bottom:10px;
 }
 
 .title p{
-color:#64748b;
-font-size:17px;
+  color:#64748b;
+  font-size:17px;
 }
 
+/* ABOUT */
 .about{
-background:white;
+  background:white;
 }
 
 .about-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:45px;
-align-items:center;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:45px;
+  align-items:center;
 }
 
 .about-text h3{
-font-size:30px;
-margin-bottom:18px;
-color:#1261a0;
+  font-size:31px;
+  color:var(--blue);
+  margin-bottom:17px;
 }
 
 .about-text p{
-margin-bottom:18px;
-color:#475569;
+  color:#475569;
+  margin-bottom:18px;
 }
 
 .highlight{
-padding:25px;
-background:#eef7ff;
-border-left:5px solid #1261a0;
-border-radius:12px;
-font-weight:bold;
+  padding:22px;
+  background:var(--light);
+  border-left:5px solid var(--blue);
+  border-radius:13px;
+  font-weight:bold;
 }
 
 .about-image img{
-width:100%;
-border-radius:24px;
-box-shadow:0 15px 40px rgba(0,0,0,.15);
+  width:100%;
+  display:block;
+  border-radius:25px;
+  box-shadow:0 18px 45px rgba(0,0,0,.16);
 }
 
+/* CARDS */
 .cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:25px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:24px;
 }
 
 .card{
-background:white;
-padding:32px 25px;
-border-radius:20px;
-box-shadow:0 8px 28px rgba(0,0,0,.07);
-text-align:center;
-transition:.3s;
+  background:white;
+  padding:31px 24px;
+  border-radius:22px;
+  box-shadow:0 8px 28px rgba(0,0,0,.07);
+  text-align:center;
+  transition:.35s;
+  border:1px solid #edf2f7;
 }
 
 .card:hover{
-transform:translateY(-7px);
-box-shadow:0 15px 35px rgba(0,0,0,.12);
+  transform:translateY(-8px);
+  box-shadow:0 18px 38px rgba(0,0,0,.12);
 }
 
 .icon{
-font-size:48px;
-margin-bottom:16px;
+  font-size:46px;
+  margin-bottom:13px;
 }
 
 .card h3{
-font-size:22px;
-color:#1261a0;
-margin-bottom:10px;
+  color:var(--blue);
+  font-size:22px;
+  margin-bottom:9px;
 }
 
 .card p{
-color:#64748b;
+  color:#64748b;
 }
 
+/* MISSION */
 .mission{
-background:#eef7ff;
+  background:#edf7ff;
 }
 
+/* STATS */
 .stats{
-background:linear-gradient(135deg,#1261a0,#19a974);
-color:white;
+  background:linear-gradient(135deg,#075b91,#16a477);
+  color:white;
+}
+
+.stats .title h2{
+  color:white;
+}
+
+.stats .title p{
+  color:#e7f5ff;
 }
 
 .stats-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:25px;
-text-align:center;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+  text-align:center;
 }
 
 .stat{
-padding:25px;
+  padding:25px;
 }
 
 .stat strong{
-display:block;
-font-size:40px;
-margin-bottom:5px;
+  display:block;
+  font-size:42px;
+  margin-bottom:4px;
 }
 
 .stat span{
-font-size:17px;
+  font-size:17px;
 }
 
+/* GALLERY */
 .gallery{
-background:white;
+  background:white;
 }
 
 .gallery-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
 }
 
 .gallery-item{
-position:relative;
-overflow:hidden;
-border-radius:20px;
-box-shadow:0 8px 25px rgba(0,0,0,.12);
+  position:relative;
+  overflow:hidden;
+  border-radius:21px;
+  box-shadow:0 9px 28px rgba(0,0,0,.13);
+  min-height:280px;
 }
 
 .gallery-item img{
-width:100%;
-height:300px;
-object-fit:cover;
-display:block;
-transition:.4s;
+  width:100%;
+  height:310px;
+  object-fit:cover;
+  display:block;
+  transition:.5s;
 }
 
 .gallery-item:hover img{
-transform:scale(1.06);
+  transform:scale(1.08);
 }
 
 .gallery-caption{
-position:absolute;
-bottom:0;
-left:0;
-right:0;
-padding:18px;
-color:white;
-font-weight:bold;
-background:linear-gradient(transparent,rgba(0,0,0,.8));
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  padding:22px 17px 16px;
+  color:white;
+  font-weight:bold;
+  background:linear-gradient(transparent,rgba(0,0,0,.82));
 }
 
+/* VALUES */
 .values{
-background:#f5f8fc;
+  background:#f5f8fc;
 }
 
+/* CONTACT */
 .contact{
-background:#eaf4ff;
+  background:#eaf5ff;
 }
 
 .contact-box{
-max-width:850px;
-margin:auto;
-background:white;
-padding:40px;
-border-radius:25px;
-box-shadow:0 10px 35px rgba(0,0,0,.08);
+  max-width:900px;
+  margin:auto;
+  background:white;
+  padding:40px;
+  border-radius:25px;
+  box-shadow:0 12px 40px rgba(0,0,0,.08);
 }
 
 .contact-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
 }
 
 .contact-item{
-text-align:center;
-padding:20px;
-border-radius:16px;
-background:#f8fafc;
+  text-align:center;
+  padding:22px 12px;
+  border-radius:17px;
+  background:#f8fafc;
 }
 
 .contact-item .icon{
-font-size:32px;
+  font-size:31px;
 }
 
 .contact-item h3{
-color:#1261a0;
-margin-bottom:5px;
+  color:var(--blue);
+  margin-bottom:5px;
 }
 
 .contact-item a{
-color:#1261a0;
-text-decoration:none;
-font-weight:bold;
-word-break:break-word;
+  color:var(--blue);
+  text-decoration:none;
+  font-weight:bold;
+  word-break:break-word;
 }
 
+/* FOOTER */
 footer{
-background:#102a43;
-color:white;
-padding:45px 7%;
-text-align:center;
+  background:var(--dark);
+  color:white;
+  padding:48px 7%;
+  text-align:center;
 }
 
 .footer-logo{
-font-size:30px;
-font-weight:900;
-margin-bottom:12px;
+  font-size:31px;
+  font-weight:900;
+  margin-bottom:12px;
 }
 
 .footer-text{
-color:#cbd5e1;
+  color:#cbd5e1;
 }
 
+/* MOBILE */
 @media(max-width:750px){
 
-header{
-padding:14px 5%;
-}
+  header{
+    padding:14px 5%;
+  }
 
-nav{
-display:none;
-}
+  nav{
+    display:none;
+  }
 
-.hero{
-min-height:82vh;
-padding:60px 6%;
-}
+  .hero{
+    min-height:85vh;
+    padding:65px 6%;
+    background-position:center;
+  }
 
-.hero h1{
-font-size:45px;
-}
+  .hero h1{
+    font-size:49px;
+  }
 
-.hero h2{
-font-size:23px;
-}
+  .hero h2{
+    font-size:24px;
+  }
 
-.hero p{
-font-size:17px;
-}
+  .hero p{
+    font-size:17px;
+  }
 
-section{
-padding:65px 6%;
-}
+  section{
+    padding:65px 6%;
+  }
 
-.title h2{
-font-size:31px;
-}
+  .title h2{
+    font-size:31px;
+  }
 
-.about-grid{
-grid-template-columns:1fr;
-}
+  .about-grid{
+    grid-template-columns:1fr;
+  }
 
-.stats-grid{
-grid-template-columns:1fr;
-}
+  .about-image{
+    order:-1;
+  }
 
-.contact-grid{
-grid-template-columns:1fr;
-}
+  .stats-grid{
+    grid-template-columns:1fr;
+  }
 
-.about-image{
-order:-1;
-}
+  .gallery-grid{
+    grid-template-columns:1fr;
+  }
 
-}
+  .gallery-item img{
+    height:290px;
+  }
 
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .contact-box{
+    padding:25px 18px;
+  }
+}
 </style>
 </head>
 
 <body>
 
 <header>
+  <div class="logo">
+    <span>🤝</span>
+    CCF
+  </div>
 
-<div class="logo">
-<span>🤝</span>
-CCF
-</div>
-
-<nav>
-<a href="#home">መነሻ</a>
-<a href="#about">ስለ CCF</a>
-<a href="#programs">ፕሮግራሞች</a>
-<a href="#gallery">ምስሎች</a>
-<a href="#contact">ያግኙን</a>
-</nav>
-
+  <nav>
+    <a href="#home">መነሻ</a>
+    <a href="#about">ስለ CCF</a>
+    <a href="#programs">ፕሮግራሞች</a>
+    <a href="#gallery">ምስሎች</a>
+    <a href="#contact">ያግኙን</a>
+  </nav>
 </header>
 
-
+<!-- HOME -->
 <section class="hero" id="home">
+  <div class="hero-content">
 
-<div class="hero-content">
+    <div class="badge">CCF • ሰውን መርዳት</div>
 
-<div class="badge">CCF • ሰውን መርዳት</div>
+    <h1>CCF</h1>
 
-<h1>CCF</h1>
+    <h2>ሰውን መርዳት፣ ተስፋን ማበረታታት</h2>
 
-<h2>ሰውን መርዳት፣ ተስፋን ማበረታታት</h2>
+    <p>
+      ለሰዎች እርዳታ እና ድጋፍ በመስጠት
+      የተሻለ ሕይወት እና ጠንካራ ማህበረሰብ
+      ለመፍጠር አብረን እንሰራለን።
+    </p>
 
-<p>
-ለሰዎች እርዳታ እና ድጋፍ በመስጠት
-የተሻለ ሕይወት እና ጠንካራ ማህበረሰብ
-ለመፍጠር አብረን እንሰራለን።
-</p>
+    <div class="buttons">
+      <a href="#about" class="btn btn-primary">
+        ስለ እኛ ይወቁ
+      </a>
 
-<div class="buttons">
+      <a href="#contact" class="btn btn-secondary">
+        ያግኙን
+      </a>
+    </div>
 
-<a href="#about" class="btn btn-primary">
-ስለ እኛ ይወቁ
-</a>
-
-<a href="#contact" class="btn btn-secondary">
-ያግኙን
-</a>
-
-</div>
-
-</div>
-
+  </div>
 </section>
 
-
+<!-- ABOUT -->
 <section class="about" id="about">
 
-<div class="title">
+  <div class="title">
+    <h2>ስለ CCF</h2>
+    <p>ሰዎችን እና ማህበረሰቦችን ለመደገፍ የምንሰራ ድርጅት</p>
+  </div>
 
-<h2>ስለ CCF</h2>
+  <div class="about-grid">
 
-<p>
-ሰዎችን እና ማህበረሰቦችን ለመደገፍ የምንሰራ ድርጅት
-</p>
+    <div class="about-text">
 
-</div>
+      <h3>ሰው በመጀመሪያ</h3>
 
+      <p>
+        CCF ለእርዳታ የሚፈልጉ ሰዎችን
+        ለመደገፍ እና ተስፋን ለማበረታታት
+        የሚሰራ ድርጅት ነው።
+      </p>
 
-<div class="about-grid">
+      <p>
+        እያንዳንዱ ሰው ክብር፣ ተስፋ እና
+        የተሻለ እድል ሊኖረው እንደሚገባ እናምናለን።
+      </p>
 
-<div class="about-text">
+      <div class="highlight">
+        🤝 በአንድነት ስንሰራ የበለጠ ተጽእኖ መፍጠር እንችላለን።
+      </div>
 
-<h3>ሰው በመጀመሪያ</h3>
+    </div>
 
-<p>
-CCF ለእርዳታ የሚፈልጉ ሰዎችን
-ለመደገፍ እና ተስፋን ለማበረታታት
-የሚሰራ ድርጅት ነው።
-</p>
+    <div class="about-image">
+      <img
+        src="file_00000000239c82088d3e82de78c3d8b2.png"
+        alt="CCF የእርዳታ ስራ">
+    </div>
 
-<p>
-እያንዳንዱ ሰው ክብር፣ ተስፋ እና
-የተሻለ እድል ሊኖረው እንደሚገባ
-እናምናለን።
-</p>
-
-<div class="highlight">
-🤝 በአንድነት ስንሰራ የበለጠ ተጽእኖ መፍጠር እንችላለን።
-</div>
-
-</div>
-
-
-<div class="about-image">
-
-<img
-src="file_00000000239c82088d3e82de78c3d8b2.png"
-alt="CCF እርዳታ ለህፃናት">
-
-</div>
-
-</div>
-
+  </div>
 </section>
 
-
+<!-- MISSION -->
 <section class="mission">
 
-<div class="title">
+  <div class="title">
+    <h2>ተልዕኮ እና ራዕይ</h2>
+    <p>የምንሰራበት መሠረት</p>
+  </div>
 
-<h2>ተልዕኮ እና ራዕይ</h2>
+  <div class="cards">
 
-<p>የምንሰራበት መሠረት</p>
+    <div class="card">
+      <div class="icon">🤝</div>
+      <h3>ተልዕኮ</h3>
+      <p>
+        በእርዳታ እና በድጋፍ የሚፈልጉ
+        ሰዎችን መርዳት እና ማበረታታት።
+      </p>
+    </div>
 
-</div>
+    <div class="card">
+      <div class="icon">🌍</div>
+      <h3>ራዕይ</h3>
+      <p>
+        ሰዎች በተስፋ፣ በክብር እና
+        በተሻለ ሕይወት የሚኖሩበትን
+        ጠንካራ ማህበረሰብ መፍጠር።
+      </p>
+    </div>
 
-
-<div class="cards">
-
-<div class="card">
-
-<div class="icon">🤝</div>
-
-<h3>ተልዕኮ</h3>
-
-<p>
-በእርዳታ እና በድጋፍ የሚፈልጉ
-ሰዎችን መርዳት እና ማበረታታት።
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">🌍</div>
-
-<h3>ራዕይ</h3>
-
-<p>
-ሰዎች በተስፋ፣ በክብር እና
-በተሻለ ሕይወት የሚኖሩበትን
-ጠንካራ ማህበረሰብ መፍጠር።
-</p>
-
-</div>
-
-</div>
-
+  </div>
 </section>
 
-
+<!-- PROGRAMS -->
 <section id="programs">
 
-<div class="title">
+  <div class="title">
+    <h2>ዋና ፕሮግራሞች</h2>
+    <p>ለሰዎች ተጨባጭ ድጋፍ ማድረስ</p>
+  </div>
 
-<h2>ዋና ፕሮግራሞች</h2>
+  <div class="cards">
 
-<p>
-ለሰዎች ተጨባጭ ድጋፍ ማድረስ
-</p>
+    <div class="card">
+      <div class="icon">❤️</div>
+      <h3>እርዳታ</h3>
+      <p>
+        በእርዳታ የሚፈልጉ ሰዎችን
+        በተቻለ መጠን መደገፍ።
+      </p>
+    </div>
 
-</div>
+    <div class="card">
+      <div class="icon">🌱</div>
+      <h3>ማህበረሰብ</h3>
+      <p>
+        የማህበረሰብ ተስፋን ማጠናከር
+        እና ለተሻለ ነገ መስራት።
+      </p>
+    </div>
 
+    <div class="card">
+      <div class="icon">💧</div>
+      <h3>ንፁህ ውሃ</h3>
+      <p>
+        የንፁህ ውሃ እና የአካባቢ
+        ጥበቃን ማበረታታት።
+      </p>
+    </div>
 
-<div class="cards">
+    <div class="card">
+      <div class="icon">📚</div>
+      <h3>ትምህርት</h3>
+      <p>
+        ህፃናት እና ወጣቶች የተሻለ
+        የትምህርት ዕድል እንዲያገኙ መደገፍ።
+      </p>
+    </div>
 
-<div class="card">
-
-<div class="icon">❤️</div>
-
-<h3>እርዳታ</h3>
-
-<p>
-በእርዳታ የሚፈልጉ ሰዎችን
-በተቻለ መጠን መደገፍ።
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">🌱</div>
-
-<h3>ማህበረሰብ</h3>
-
-<p>
-የማህበረሰብ ተስፋን ማጠናከር
-እና ለተሻለ ነገ መስራት።
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">🌳</div>
-
-<h3>አካባቢ</h3>
-
-<p>
-ንፁህ እና የተሻለ አካባቢ
-ለመፍጠር መስራት።
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">✨</div>
-
-<h3>ተስፋ</h3>
-
-<p>
-ሰዎች አዲስ ተስፋ እንዲያገኙ
-የሚያግዙ ድጋፎችን ማበረታታት።
-</p>
-
-</div>
-
-</div>
-
+  </div>
 </section>
 
-
+<!-- STATS -->
 <section class="stats">
 
-<div class="title">
+  <div class="title">
+    <h2>የCCF መርህ</h2>
+    <p>ተስፋ • ክብር • እርዳታ</p>
+  </div>
 
-<h2 style="color:white;">የCCF መርህ</h2>
+  <div class="stats-grid">
 
-<p style="color:#e2e8f0;">
-ተስፋ • ክብር • እርዳታ
-</p>
+    <div class="stat">
+      <strong>01</strong>
+      <span>ሰውን መርዳት</span>
+    </div>
 
-</div>
+    <div class="stat">
+      <strong>02</strong>
+      <span>ተስፋን ማበረታታት</span>
+    </div>
 
+    <div class="stat">
+      <strong>03</strong>
+      <span>ማህበረሰብን መደገፍ</span>
+    </div>
 
-<div class="stats-grid">
-
-<div class="stat">
-
-<strong>01</strong>
-
-<span>ሰውን መርዳት</span>
-
-</div>
-
-
-<div class="stat">
-
-<strong>02</strong>
-
-<span>ተስፋን ማበረታታት</span>
-
-</div>
-
-
-<div class="stat">
-
-<strong>03</strong>
-
-<span>ማህበረሰብን መደገፍ</span>
-
-</div>
-
-</div>
-
+  </div>
 </section>
 
-
+<!-- GALLERY -->
 <section class="gallery" id="gallery">
 
-<div class="title">
+  <div class="title">
+    <h2>የስራችን ምስሎች</h2>
+    <p>CCF ሰዎችን በመደገፍ የሚያደርገውን ስራ ይመልከቱ</p>
+  </div>
 
-<h2>የስራችን ምስል</h2>
+  <div class="gallery-grid">
 
-<p>
-ሰዎችን በመደገፍ እና በመርዳት የሚያሳይ ምስል
-</p>
+    <div class="gallery-item">
+      <img
+        src="file_00000000239c82088d3e82de78c3d8b2.png"
+        alt="CCF የትምህርት ድጋፍ">
+      <div class="gallery-caption">
+        📚 የትምህርት ድጋፍ
+      </div>
+    </div>
 
-</div>
+    <div class="gallery-item">
+      <img
+        src="file_000000006d988208b497db0eb8080237.png"
+        alt="CCF የህፃናት ድጋፍ">
+      <div class="gallery-caption">
+        🤝 ህፃናትን መደገፍ
+      </div>
+    </div>
 
+    <div class="gallery-item">
+      <img
+        src="file_000000007d1482089ec36208840a9fd9.png"
+        alt="CCF የትምህርት ድጋፍ">
+      <div class="gallery-caption">
+        🎒 የትምህርት እርዳታ
+      </div>
+    </div>
 
-<div class="gallery-grid">
+    <div class="gallery-item">
+      <img
+        src="file_00000000848c8208951ab07e0a35c6d9.png"
+        alt="CCF የእርዳታ ስራ">
+      <div class="gallery-caption">
+        💧 ንፁህ ውሃ እና ጤና
+      </div>
+    </div>
 
-<div class="gallery-item">
+    <div class="gallery-item">
+      <img
+        src="file_000000009c1c8208a10171bb5c69f442.png"
+        alt="CCF የውሃ ድጋፍ">
+      <div class="gallery-caption">
+        💙 ለሰዎች የሚደረግ ድጋፍ
+      </div>
+    </div>
 
-<img
-src="file_00000000239c82088d3e82de78c3d8b2.png"
-alt="CCF ለህፃናት የትምህርት ድጋፍ">
-
-<div class="gallery-caption">
-📚 የትምህርት ድጋፍ
-</div>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">🌾</div>
-
-<h3>የገበሬዎች ድጋፍ</h3>
-
-<p>
-የገጠር ማህበረሰቦችን
-በእርዳታ እና ድጋፍ ማገዝ።
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">💧</div>
-
-<h3>ንፁህ ውሃ</h3>
-
-<p>
-የንፁህ ውሃ እና የአካባቢ
-ጥበቃን ማበረታታት።
-</p>
-
-</div>
-
-</div>
-
+  </div>
 </section>
 
-
+<!-- VALUES -->
 <section class="values">
 
-<div class="title">
+  <div class="title">
+    <h2>የምንከተላቸው እሴቶች</h2>
+    <p>በስራችን የምንመራባቸው መርሆች</p>
+  </div>
 
-<h2>የምንከተላቸው እሴቶች</h2>
+  <div class="cards">
 
-<p>በስራችን የምንመራባቸው መርሆች</p>
+    <div class="card">
+      <div class="icon">❤️</div>
+      <h3>ክብር</h3>
+      <p>እያንዳንዱን ሰው በክብር እንመለከታለን።</p>
+    </div>
 
-</div>
+    <div class="card">
+      <div class="icon">🛡️</div>
+      <h3>ታማኝነት</h3>
+      <p>በታማኝነት እና በሃላፊነት እንሰራለን።</p>
+    </div>
 
+    <div class="card">
+      <div class="icon">🤝</div>
+      <h3>ትብብር</h3>
+      <p>ለተሻለ ውጤት አብረን እንሰራለን።</p>
+    </div>
 
-<div class="cards">
+    <div class="card">
+      <div class="icon">🌍</div>
+      <h3>ተጽእኖ</h3>
+      <p>የሚታይ እና ዘላቂ ለውጥ ለመፍጠር እንሰራለን።</p>
+    </div>
 
-<div class="card">
-
-<div class="icon">❤️</div>
-
-<h3>ክብር</h3>
-
-<p>
-እያንዳንዱን ሰው በክብር
-እንመለከታለን።
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">🛡️</div>
-
-<h3>ታማኝነት</h3>
-
-<p>
-በታማኝነት እና በሃላፊነት
-እንሰራለን።
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">🤝</div>
-
-<h3>ትብብር</h3>
-
-<p>
-ለተሻለ ውጤት
-አብረን እንሰራለን።
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">🌍</div>
-
-<h3>ተጽእኖ</h3>
-
-<p>
-የሚታይ እና ዘላቂ
-ለውጥ ለመፍጠር እንሰራለን።
-</p>
-
-</div>
-
-</div>
-
+  </div>
 </section>
 
-
+<!-- CONTACT -->
 <section class="contact" id="contact">
 
-<div class="title">
+  <div class="title">
+    <h2>ያግኙን</h2>
+    <p>ለተጨማሪ መረጃ ከእኛ ጋር ይገናኙ</p>
+  </div>
 
-<h2>ያግኙን</h2>
+  <div class="contact-box">
 
-<p>
-ለተጨማሪ መረጃ ከእኛ ጋር ይገናኙ
-</p>
+    <div class="contact-grid">
 
-</div>
+      <div class="contact-item">
+        <div class="icon">📞</div>
+        <h3>ስልክ</h3>
+        <a href="tel:0978242462">0978242462</a>
+      </div>
 
+      <div class="contact-item">
+        <div class="icon">✉️</div>
+        <h3>Email</h3>
+        <a href="mailto:lulchegi@gmail">lulchegi@gmail</a>
+      </div>
 
-<div class="contact-box">
+      <div class="contact-item">
+        <div class="icon">📍</div>
+        <h3>አካባቢ</h3>
+        <p>Ethiopia</p>
+      </div>
 
-<div class="contact-grid">
-
-
-<div class="contact-item">
-
-<div class="icon">📞</div>
-
-<h3>ስልክ</h3>
-
-<a href="tel:0978242462">
-0978242462
-</a>
-
-</div>
-
-
-<div class="contact-item">
-
-<div class="icon">✉️</div>
-
-<h3>Email</h3>
-
-<a href="mailto:lulchegi@gmail">
-lulchegi@gmail
-</a>
-
-</div>
-
-
-<div class="contact-item">
-
-<div class="icon">📍</div>
-
-<h3>አካባቢ</h3>
-
-<p>Ethiopia</p>
-
-</div>
-
-
-</div>
-
-</div>
-
+    </div>
+  </div>
 </section>
-
 
 <footer>
 
-<div class="footer-logo">
-🤝 CCF
-</div>
+  <div class="footer-logo">🤝 CCF</div>
 
-<p class="footer-text">
-ሰውን መርዳት • ተስፋ • ክብር • እርዳታ
-</p>
+  <p class="footer-text">
+    ሰውን መርዳት • ተስፋ • ክብር • እርዳታ
+  </p>
 
-<br>
+  <br>
 
-<p class="footer-text">
-© 2026 CCF — መብቱ የተጠበቀ ነው
-</p>
+  <p class="footer-text">
+    © 2026 CCF — መብቱ የተጠበቀ ነው
+  </p>
 
 </footer>
-
 
 </body>
 </html>
