@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="am">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
   <title>SLTI Students</title>
 
   <style>
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -21,46 +26,46 @@
 
     header {
       background: white;
-      padding: 18px 25px;
+      padding: 18px 22px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 100;
     }
 
     .logo {
+      color: #1261a0;
       font-size: 24px;
       font-weight: bold;
-      color: #1261a0;
     }
 
     .login {
       background: #1261a0;
       color: white;
       border: none;
-      padding: 10px 18px;
-      border-radius: 20px;
+      padding: 11px 22px;
+      border-radius: 25px;
       font-size: 16px;
     }
 
     .hero {
-      padding: 55px 20px;
-      text-align: center;
       background: linear-gradient(135deg, #1261a0, #19a974);
       color: white;
+      text-align: center;
+      padding: 65px 20px;
     }
 
     .hero h1 {
-      font-size: 40px;
-      margin-bottom: 15px;
+      font-size: 42px;
+      margin-bottom: 18px;
     }
 
     .hero p {
       font-size: 18px;
-      line-height: 1.7;
+      line-height: 1.8;
     }
 
     .container {
@@ -71,397 +76,1177 @@
 
     .title {
       text-align: center;
-      margin-bottom: 25px;
+      margin-bottom: 30px;
     }
 
     .title h2 {
-      font-size: 28px;
-      margin-bottom: 8px;
+      font-size: 30px;
+      margin-bottom: 10px;
     }
 
-    .grades {
+    .title p {
+      font-size: 17px;
+    }
+
+    .grades,
+    .subjects,
+    .chapters {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 18px;
     }
 
-    .grade {
+    .card {
       background: white;
-      padding: 30px 20px;
-      border-radius: 18px;
+      border-radius: 20px;
+      padding: 30px 18px;
       text-align: center;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
       cursor: pointer;
-      transition: 0.3s;
+      transition: 0.2s;
     }
 
-    .grade:active {
+    .card:active {
       transform: scale(0.97);
     }
 
-    .grade .icon {
+    .card .icon {
       font-size: 45px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
-    .grade h3 {
+    .card h3 {
       color: #1261a0;
+      font-size: 22px;
       margin-bottom: 7px;
-      font-size: 23px;
     }
 
-    .grade p {
-      font-size: 17px;
+    .card p {
+      font-size: 16px;
+      line-height: 1.5;
     }
 
     .features {
-      margin-top: 35px;
       display: grid;
       grid-template-columns: 1fr;
-      gap: 15px;
+      gap: 18px;
+      margin-top: 35px;
     }
 
     .feature {
       background: white;
-      padding: 25px 15px;
+      border-radius: 20px;
+      padding: 28px;
       text-align: center;
-      border-radius: 18px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-      cursor: pointer;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
     }
 
-    .feature div {
-      font-size: 35px;
-      margin-bottom: 8px;
+    .feature .icon {
+      font-size: 38px;
+      margin-bottom: 10px;
     }
 
     .feature h3 {
-      margin-bottom: 7px;
+      margin-bottom: 8px;
     }
 
-    footer {
-      margin-top: 30px;
-      background: #102a43;
-      color: white;
-      text-align: center;
-      padding: 25px;
-    }
-
-    /* SUBJECT PAGE */
-
-    #subjectsPage {
-      display: none;
-    }
-
-    .backBtn {
+    .back {
       background: #1261a0;
       color: white;
       border: none;
-      padding: 11px 20px;
-      border-radius: 20px;
+      padding: 12px 20px;
+      border-radius: 25px;
       font-size: 16px;
       margin-bottom: 25px;
       cursor: pointer;
     }
 
-    .subjectGrid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .subject {
+    .lesson-box {
       background: white;
-      padding: 25px 15px;
-      border-radius: 18px;
-      text-align: center;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      line-height: 1.8;
+    }
+
+    .lesson-box h2 {
+      color: #1261a0;
+      margin-bottom: 15px;
+    }
+
+    .example {
+      background: #eef6ff;
+      border-left: 5px solid #1261a0;
+      padding: 18px;
+      margin: 20px 0;
+      border-radius: 10px;
+    }
+
+    .practice {
+      margin-top: 25px;
+      background: white;
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .practice h2 {
+      margin-bottom: 20px;
+      color: #1261a0;
+    }
+
+    .question {
+      margin-bottom: 25px;
+    }
+
+    .question p {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .option {
+      display: block;
+      background: #f4f7fb;
+      padding: 13px;
+      margin: 8px 0;
+      border-radius: 10px;
       cursor: pointer;
-      transition: 0.3s;
     }
 
-    .subject:active {
-      transform: scale(0.97);
+    .option:hover {
+      background: #e4eff9;
     }
 
-    .subjectIcon {
-      font-size: 40px;
+    .quiz-button {
+      width: 100%;
+      background: #19a974;
+      color: white;
+      border: none;
+      padding: 15px;
+      border-radius: 25px;
+      font-size: 18px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .result {
+      text-align: center;
+      background: white;
+      padding: 35px 20px;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .result .big {
+      font-size: 55px;
+      margin-bottom: 15px;
+    }
+
+    .result h2 {
+      color: #1261a0;
       margin-bottom: 10px;
     }
 
-    .subject h3 {
-      color: #1261a0;
-      font-size: 20px;
+    footer {
+      margin-top: 40px;
+      background: #102a43;
+      color: white;
+      text-align: center;
+      padding: 28px;
     }
 
-    /* MOBILE */
+    .hidden {
+      display: none !important;
+    }
 
     @media (max-width: 600px) {
 
       .hero h1 {
-        font-size: 32px;
+        font-size: 34px;
       }
 
       .hero p {
-        font-size: 17px;
+        font-size: 16px;
       }
 
-      .grades {
+      .grades,
+      .subjects,
+      .chapters {
         grid-template-columns: 1fr 1fr;
       }
 
-      .subjectGrid {
-        grid-template-columns: 1fr 1fr;
+      .card {
+        padding: 25px 12px;
       }
+
+      .card h3 {
+        font-size: 19px;
+      }
+
+      .card .icon {
+        font-size: 38px;
+      }
+
     }
+
   </style>
+
 </head>
+
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="logo">🎓 SLTI Students</div>
-    <button class="login">Login</button>
-  </header>
 
+<!-- HEADER -->
 
-  <!-- HOME PAGE -->
-  <div id="homePage">
+<header>
 
-    <section class="hero">
-      <h1>SLTI Students</h1>
-
-      <p>
-        9ኛ–12ኛ ክፍል ተማሪዎች የመማሪያ መድረክ
-        <br>
-        ተማር፣ ተለማመድ፣ ፈተናህን አዘጋጅ።
-      </p>
-    </section>
-
-
-    <main class="container">
-
-      <div class="title">
-        <h2>📚 ክፍልህን ምረጥ</h2>
-
-        <p>
-          ለመጀመር የምትማርበትን ክፍል ምረጥ።
-        </p>
-      </div>
-
-
-      <!-- GRADES -->
-
-      <div class="grades">
-
-        <div class="grade" onclick="openSubjects(9)">
-          <div class="icon">📘</div>
-          <h3>9ኛ ክፍል</h3>
-          <p>Grade 9</p>
-        </div>
-
-
-        <div class="grade" onclick="openSubjects(10)">
-          <div class="icon">📗</div>
-          <h3>10ኛ ክፍል</h3>
-          <p>Grade 10</p>
-        </div>
-
-
-        <div class="grade" onclick="openSubjects(11)">
-          <div class="icon">📙</div>
-          <h3>11ኛ ክፍል</h3>
-          <p>Grade 11</p>
-        </div>
-
-
-        <div class="grade" onclick="openSubjects(12)">
-          <div class="icon">📕</div>
-          <h3>12ኛ ክፍል</h3>
-          <p>Grade 12</p>
-        </div>
-
-      </div>
-
-
-      <!-- FEATURES -->
-
-      <div class="features">
-
-        <div class="feature">
-          <div>📝</div>
-          <h3>Exam Prep</h3>
-          <p>ለፈተና ዝግጅት</p>
-        </div>
-
-
-        <div class="feature">
-          <div>📊</div>
-          <h3>My Progress</h3>
-          <p>የትምህርት እድገትህን ተከታተል</p>
-        </div>
-
-
-        <div class="feature">
-          <div>🤖</div>
-          <h3>AI Teacher</h3>
-          <p>ጥያቄህን ጠይቅ</p>
-        </div>
-
-      </div>
-
-    </main>
-
+  <div class="logo">
+    🎓 SLTI Students
   </div>
 
+  <button class="login">
+    Login
+  </button>
 
-  <!-- SUBJECTS PAGE -->
-
-  <div id="subjectsPage">
-
-    <main class="container">
-
-      <button class="backBtn" onclick="goHome()">
-        ← ወደ መነሻ
-      </button>
+</header>
 
 
-      <div class="title">
 
-        <h2 id="gradeTitle">
-          📚 9ኛ ክፍል
-        </h2>
+<!-- HOME PAGE -->
 
-        <p>
-          የምትማራቸውን ትምህርቶች ምረጥ
-        </p>
+<section id="homePage">
 
-      </div>
+  <div class="hero">
 
-
-      <div class="subjectGrid">
-
-        <div class="subject" onclick="openSubject('Mathematics')">
-          <div class="subjectIcon">➗</div>
-          <h3>Mathematics</h3>
-        </div>
-
-
-        <div class="subject" onclick="openSubject('Physics')">
-          <div class="subjectIcon">⚛️</div>
-          <h3>Physics</h3>
-        </div>
-
-
-        <div class="subject" onclick="openSubject('Chemistry')">
-          <div class="subjectIcon">🧪</div>
-          <h3>Chemistry</h3>
-        </div>
-
-
-        <div class="subject" onclick="openSubject('Biology')">
-          <div class="subjectIcon">🧬</div>
-          <h3>Biology</h3>
-        </div>
-
-
-        <div class="subject" onclick="openSubject('English')">
-          <div class="subjectIcon">🇬🇧</div>
-          <h3>English</h3>
-        </div>
-
-
-        <div class="subject" onclick="openSubject('Amharic')">
-          <div class="subjectIcon">📖</div>
-          <h3>Amharic</h3>
-        </div>
-
-
-        <div class="subject" onclick="openSubject('Geography')">
-          <div class="subjectIcon">🌍</div>
-          <h3>Geography</h3>
-        </div>
-
-
-        <div class="subject" onclick="openSubject('History')">
-          <div class="subjectIcon">📜</div>
-          <h3>History</h3>
-        </div>
-
-
-        <div class="subject" onclick="openSubject('ICT')">
-          <div class="subjectIcon">💻</div>
-          <h3>ICT</h3>
-        </div>
-
-
-        <div class="subject" onclick="openSubject('Exam Preparation')">
-          <div class="subjectIcon">📝</div>
-          <h3>Exam Prep</h3>
-        </div>
-
-      </div>
-
-    </main>
-
-  </div>
-
-
-  <!-- FOOTER -->
-
-  <footer>
-
-    <p>© 2026 SLTI Students</p>
+    <h1>
+      SLTI Students
+    </h1>
 
     <p>
-      Learn • Practice • Succeed 🎓
+      9ኛ–12ኛ ክፍል ተማሪዎች የመማሪያ መድረክ
+      <br>
+      ተማር፣ ተለማመድ፣ ፈተናህን አዘጋጅ።
     </p>
 
-  </footer>
+  </div>
 
 
-  <script>
+  <main class="container">
 
-    let selectedGrade = 9;
+    <div class="title">
+
+      <h2>
+        📚 ክፍልህን ምረጥ
+      </h2>
+
+      <p>
+        ለመጀመር የምትማርበትን ክፍል ምረጥ።
+      </p>
+
+    </div>
 
 
-    function openSubjects(grade) {
+    <div class="grades">
 
-      selectedGrade = grade;
 
-      document.getElementById("homePage").style.display = "none";
+      <div class="card"
+           onclick="openSubjects(9)">
 
-      document.getElementById("subjectsPage").style.display = "block";
+        <div class="icon">📘</div>
 
-      document.getElementById("gradeTitle").innerHTML =
-        "📚 " + grade + "ኛ ክፍል";
+        <h3>9ኛ ክፍል</h3>
 
-      window.scrollTo(0, 0);
+        <p>Grade 9</p>
+
+      </div>
+
+
+
+      <div class="card"
+           onclick="openSubjects(10)">
+
+        <div class="icon">📗</div>
+
+        <h3>10ኛ ክፍል</h3>
+
+        <p>Grade 10</p>
+
+      </div>
+
+
+
+      <div class="card"
+           onclick="openSubjects(11)">
+
+        <div class="icon">📙</div>
+
+        <h3>11ኛ ክፍል</h3>
+
+        <p>Grade 11</p>
+
+      </div>
+
+
+
+      <div class="card"
+           onclick="openSubjects(12)">
+
+        <div class="icon">📕</div>
+
+        <h3>12ኛ ክፍል</h3>
+
+        <p>Grade 12</p>
+
+      </div>
+
+
+    </div>
+
+
+
+    <div class="features">
+
+
+      <div class="feature">
+
+        <div class="icon">📝</div>
+
+        <h3>Exam Prep</h3>
+
+        <p>
+          ለፈተና ዝግጅት
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <div class="icon">📊</div>
+
+        <h3>My Progress</h3>
+
+        <p>
+          የትምህርት እድገትህን ተከታተል
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <div class="icon">🤖</div>
+
+        <h3>AI Teacher</h3>
+
+        <p>
+          ጥያቄህን ጠይቅ
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </main>
+
+</section>
+
+
+
+
+<!-- SUBJECTS PAGE -->
+
+<section id="subjectsPage"
+         class="hidden">
+
+  <main class="container">
+
+    <button class="back"
+            onclick="goHome()">
+
+      ← ወደ መነሻ
+
+    </button>
+
+
+    <div class="title">
+
+      <h2 id="selectedGradeTitle">
+        📚 9ኛ ክፍል
+      </h2>
+
+      <p>
+        የምትማራቸውን ትምህርቶች ምረጥ
+      </p>
+
+    </div>
+
+
+
+    <div class="subjects">
+
+
+      <div class="card"
+           onclick="openSubject('Mathematics')">
+
+        <div class="icon">➗</div>
+
+        <h3>Mathematics</h3>
+
+      </div>
+
+
+      <div class="card"
+           onclick="openSubject('Physics')">
+
+        <div class="icon">⚛️</div>
+
+        <h3>Physics</h3>
+
+      </div>
+
+
+      <div class="card"
+           onclick="openSubject('Chemistry')">
+
+        <div class="icon">🧪</div>
+
+        <h3>Chemistry</h3>
+
+      </div>
+
+
+      <div class="card"
+           onclick="openSubject('Biology')">
+
+        <div class="icon">🧬</div>
+
+        <h3>Biology</h3>
+
+      </div>
+
+
+      <div class="card"
+           onclick="openSubject('English')">
+
+        <div class="icon">🇬🇧</div>
+
+        <h3>English</h3>
+
+      </div>
+
+
+      <div class="card"
+           onclick="openSubject('Amharic')">
+
+        <div class="icon">📖</div>
+
+        <h3>Amharic</h3>
+
+      </div>
+
+
+      <div class="card"
+           onclick="openSubject('Geography')">
+
+        <div class="icon">🌍</div>
+
+        <h3>Geography</h3>
+
+      </div>
+
+
+      <div class="card"
+           onclick="openSubject('History')">
+
+        <div class="icon">📜</div>
+
+        <h3>History</h3>
+
+      </div>
+
+
+      <div class="card"
+           onclick="openSubject('ICT')">
+
+        <div class="icon">💻</div>
+
+        <h3>ICT</h3>
+
+      </div>
+
+
+      <div class="card"
+           onclick="openSubject('Exam Prep')">
+
+        <div class="icon">📝</div>
+
+        <h3>Exam Prep</h3>
+
+      </div>
+
+
+    </div>
+
+  </main>
+
+</section>
+
+
+
+
+<!-- MATHEMATICS PAGE -->
+
+<section id="mathPage"
+         class="hidden">
+
+  <main class="container">
+
+    <button class="back"
+            onclick="backToSubjects()">
+
+      ← ወደ ትምህርቶች
+
+    </button>
+
+
+    <div class="title">
+
+      <h2>
+        ➗ Mathematics
+      </h2>
+
+      <p id="mathGrade">
+        የ9ኛ ክፍል ሂሳብ
+      </p>
+
+    </div>
+
+
+
+    <div class="chapters">
+
+
+      <div class="card"
+           onclick="openLesson(1)">
+
+        <div class="icon">📘</div>
+
+        <h3>ምዕራፍ 1</h3>
+
+        <p>
+          ቁጥሮች እና የቁጥር ስርዓት
+        </p>
+
+      </div>
+
+
+
+      <div class="card"
+           onclick="openLesson(2)">
+
+        <div class="icon">📗</div>
+
+        <h3>ምዕራፍ 2</h3>
+
+        <p>
+          Sets
+        </p>
+
+      </div>
+
+
+
+      <div class="card"
+           onclick="openLesson(3)">
+
+        <div class="icon">📙</div>
+
+        <h3>ምዕራፍ 3</h3>
+
+        <p>
+          Algebra
+        </p>
+
+      </div>
+
+
+
+      <div class="card"
+           onclick="openLesson(4)">
+
+        <div class="icon">📕</div>
+
+        <h3>ምዕራፍ 4</h3>
+
+        <p>
+          Equations
+        </p>
+
+      </div>
+
+
+
+      <div class="card"
+           onclick="openLesson(5)">
+
+        <div class="icon">📐</div>
+
+        <h3>ምዕራፍ 5</h3>
+
+        <p>
+          Geometry
+        </p>
+
+      </div>
+
+
+
+      <div class="card"
+           onclick="openLesson(6)">
+
+        <div class="icon">📊</div>
+
+        <h3>ምዕራፍ 6</h3>
+
+        <p>
+          Statistics
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </main>
+
+</section>
+
+
+
+
+<!-- LESSON PAGE -->
+
+<section id="lessonPage"
+         class="hidden">
+
+  <main class="container">
+
+    <button class="back"
+            onclick="backToMath()">
+
+      ← ወደ Mathematics
+
+    </button>
+
+
+    <div class="lesson-box">
+
+      <h2 id="lessonTitle">
+        📖 Lesson 1
+      </h2>
+
+
+      <p id="lessonText">
+
+        እንኳን ወደ SLTI Students
+        Mathematics ትምህርት በደህና መጣህ።
+
+        <br><br>
+
+        በዚህ ትምህርት የሂሳብ
+        መሰረታዊ ነገሮችን
+        በቀላሉ እንማራለን።
+
+      </p>
+
+
+      <div class="example">
+
+        <h3>💡 ምሳሌ</h3>
+
+        <p>
+          5 + 3 = 8
+        </p>
+
+        <p>
+          10 - 4 = 6
+        </p>
+
+      </div>
+
+
+      <button class="quiz-button"
+              onclick="openQuiz()">
+
+        📝 Practice & Quiz
+
+      </button>
+
+    </div>
+
+  </main>
+
+</section>
+
+
+
+
+<!-- QUIZ PAGE -->
+
+<section id="quizPage"
+         class="hidden">
+
+  <main class="container">
+
+    <button class="back"
+            onclick="backToLesson()">
+
+      ← ወደ Lesson
+
+    </button>
+
+
+    <div class="practice">
+
+      <h2>
+        📝 Mathematics Quiz
+      </h2>
+
+
+      <div class="question">
+
+        <p>
+          1. 5 + 3 = ?
+        </p>
+
+
+        <label class="option">
+
+          <input type="radio"
+                 name="q1"
+                 value="6">
+
+          6
+
+        </label>
+
+
+        <label class="option">
+
+          <input type="radio"
+                 name="q1"
+                 value="8">
+
+          8
+
+        </label>
+
+
+        <label class="option">
+
+          <input type="radio"
+                 name="q1"
+                 value="10">
+
+          10
+
+        </label>
+
+      </div>
+
+
+
+      <div class="question">
+
+        <p>
+          2. 10 - 4 = ?
+        </p>
+
+
+        <label class="option">
+
+          <input type="radio"
+                 name="q2"
+                 value="5">
+
+          5
+
+        </label>
+
+
+        <label class="option">
+
+          <input type="radio"
+                 name="q2"
+                 value="6">
+
+          6
+
+        </label>
+
+
+        <label class="option">
+
+          <input type="radio"
+                 name="q2"
+                 value="7">
+
+          7
+
+        </label>
+
+      </div>
+
+
+
+      <div class="question">
+
+        <p>
+          3. 2 × 4 = ?
+        </p>
+
+
+        <label class="option">
+
+          <input type="radio"
+                 name="q3"
+                 value="6">
+
+          6
+
+        </label>
+
+
+        <label class="option">
+
+          <input type="radio"
+                 name="q3"
+                 value="8">
+
+          8
+
+        </label>
+
+
+        <label class="option">
+
+          <input type="radio"
+                 name="q3"
+                 value="10">
+
+          10
+
+        </label>
+
+      </div>
+
+
+
+      <button class="quiz-button"
+              onclick="submitQuiz()">
+
+        ✅ Submit Quiz
+
+      </button>
+
+    </div>
+
+  </main>
+
+</section>
+
+
+
+
+<!-- RESULT PAGE -->
+
+<section id="resultPage"
+         class="hidden">
+
+  <main class="container">
+
+    <div class="result">
+
+      <div class="big">
+        🏆
+      </div>
+
+
+      <h2>
+        Quiz Complete!
+      </h2>
+
+
+      <p id="resultText">
+        ውጤትህ እዚህ ይታያል።
+      </p>
+
+
+      <br>
+
+
+      <button class="back"
+              onclick="backToMath()">
+
+        📚 ወደ Mathematics
+
+      </button>
+
+    </div>
+
+  </main>
+
+</section>
+
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <p>
+    © 2026 SLTI Students
+  </p>
+
+  <p>
+    Learn • Practice • Succeed 🎓
+  </p>
+
+</footer>
+
+
+
+
+<script>
+
+  let selectedGrade = 9;
+
+
+  /* SHOW PAGE */
+
+  function showPage(pageId) {
+
+    const pages = [
+      "homePage",
+      "subjectsPage",
+      "mathPage",
+      "lessonPage",
+      "quizPage",
+      "resultPage"
+    ];
+
+
+    pages.forEach(function(page) {
+
+      document
+        .getElementById(page)
+        .classList.add("hidden");
+
+    });
+
+
+    document
+      .getElementById(pageId)
+      .classList.remove("hidden");
+
+
+    window.scrollTo(0, 0);
+
+  }
+
+
+
+  /* SELECT GRADE */
+
+  function openSubjects(grade) {
+
+    selectedGrade = grade;
+
+
+    document
+      .getElementById("selectedGradeTitle")
+      .innerHTML =
+      "📚 " + grade + "ኛ ክፍል";
+
+
+    document
+      .getElementById("mathGrade")
+      .innerHTML =
+      "የ" + grade + "ኛ ክፍል ሂሳብ";
+
+
+    showPage("subjectsPage");
+
+  }
+
+
+
+  /* HOME */
+
+  function goHome() {
+
+    showPage("homePage");
+
+  }
+
+
+
+  /* SUBJECT */
+
+  function openSubject(subject) {
+
+
+    if (subject === "Mathematics") {
+
+      showPage("mathPage");
+
     }
 
-
-    function goHome() {
-
-      document.getElementById("subjectsPage").style.display = "none";
-
-      document.getElementById("homePage").style.display = "block";
-
-      window.scrollTo(0, 0);
-    }
-
-
-    function openSubject(subject) {
+    else {
 
       alert(
-        "🎓 " + selectedGrade + "ኛ ክፍል\n\n" +
-        "📚 " + subject +
-        "\n\nቀጣዩ ደረጃ የዚህን ትምህርት ምዕራፎች እና ትምህርቶች መጨመር ነው።"
+        "📚 " +
+        subject +
+        "\n\nይህ ትምህርት በቀጣይ ይጨመራል።"
       );
 
     }
 
-  </script>
+  }
+
+
+
+  /* BACK TO SUBJECTS */
+
+  function backToSubjects() {
+
+    showPage("subjectsPage");
+
+  }
+
+
+
+  /* LESSON */
+
+  function openLesson(number) {
+
+
+    const titles = {
+
+      1: "📖 Lesson 1 — ቁጥሮች",
+
+      2: "📖 Lesson 2 — Sets",
+
+      3: "📖 Lesson 3 — Algebra",
+
+      4: "📖 Lesson 4 — Equations",
+
+      5: "📖 Lesson 5 — Geometry",
+
+      6: "📖 Lesson 6 — Statistics"
+
+    };
+
+
+    document
+      .getElementById("lessonTitle")
+      .innerHTML = titles[number];
+
+
+    showPage("lessonPage");
+
+  }
+
+
+
+  /* BACK TO MATH */
+
+  function backToMath() {
+
+    showPage("mathPage");
+
+  }
+
+
+
+  /* QUIZ */
+
+  function openQuiz() {
+
+    showPage("quizPage");
+
+  }
+
+
+
+  /* SUBMIT QUIZ */
+
+  function submitQuiz() {
+
+
+    let score = 0;
+
+
+    const q1 =
+      document.querySelector(
+        'input[name="q1"]:checked'
+      );
+
+
+    const q2 =
+      document.querySelector(
+        'input[name="q2"]:checked'
+      );
+
+
+    const q3 =
+      document.querySelector(
+        'input[name="q3"]:checked'
+      );
+
+
+    if (q1 && q1.value === "8") {
+
+      score++;
+
+    }
+
+
+    if (q2 && q2.value === "6") {
+
+      score++;
+
+    }
+
+
+    if (q3 && q3.value === "8") {
+
+      score++;
+
+    }
+
+
+    document
+      .getElementById("resultText")
+      .innerHTML =
+      "🎯 ውጤትህ: <strong>" +
+      score +
+      "/3</strong><br><br>" +
+      "በጣም ጥሩ! ትምህርትህን ቀጥል።";
+
+
+    showPage("resultPage");
+
+  }
+
+</script>
+
 
 </body>
+
 </html>
