@@ -1,0 +1,59 @@
+name: Build SLTI Android App
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-android:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout website
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+
+      - name: Setup Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Create Capacitor project
+        run: |
+          mkdir -p app
+          cp index.html app/index.html
+
+          cd app
+
+          npm init -y
+
+          npm install @capacitor/core@8 @capacitor/android@8
+          npm install -D @capacitor/cli@8
+
+          npx cap init "SLTI Secondary Schools" "com.slti.secondaryschools" --web-dir app
+
+          mkdir -p www
+          cp index.html www/index.html
+
+          npx cap add android
+
+      - name: Build Android APK and AAB
+        working-directory: app/android
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleDebug bundleDebug
+
+      - name: Upload Android files
+        uses: actions/upload-artifact@v4
+        with:
+          name: SLTI-Android-Build
+          path: |
+            app/android/app/build/outputs/apk/debug/app-debug.apk
+            app/android/app/build/outputs/bundle/debug/app-debug.aab
