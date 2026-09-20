@@ -316,4 +316,152 @@
   </div>
 
 
-  <!-- SUBJECT
+  <!-- SUBJECTS PAGE -->
+
+  <div id="subjectsPage">
+
+    <main class="container">
+
+      <button class="backBtn" onclick="goHome()">
+        ← ወደ መነሻ
+      </button>
+
+
+      <div class="title">
+
+        <h2 id="gradeTitle">
+          📚 9ኛ ክፍል
+        </h2>
+
+        <p>
+          የምትማራቸውን ትምህርቶች ምረጥ
+        </p>
+
+      </div>
+
+
+      <div class="subjectGrid">
+
+        <div class="subject" onclick="openSubject('Mathematics')">
+          <div class="subjectIcon">➗</div>
+          <h3>Mathematics</h3>
+        </div>
+
+
+        <div class="subject" onclick="openSubject('Physics')">
+          <div class="subjectIcon">⚛️</div>
+          <h3>Physics</h3>
+        </div>
+
+
+        <div class="subject" onclick="openSubject('Chemistry')">
+          <div class="subjectIcon">🧪</div>
+          <h3>Chemistry</h3>
+        </div>
+
+
+        <div class="subject" onclick="openSubject('Biology')">
+          <div class="subjectIcon">🧬</div>
+          <h3>Biology</h3>
+        </div>
+
+
+        <div class="subject" onclick="openSubject('English')">
+          <div class="subjectIcon">🇬🇧</div>
+          <h3>English</h3>
+        </div>
+
+
+        <div class="subject" onclick="openSubject('Amharic')">
+          <div class="subjectIcon">📖</div>
+          <h3>Amharic</h3>
+        </div>
+
+
+        <div class="subject" onclick="openSubject('Geography')">
+          <div class="subjectIcon">🌍</div>
+          <h3>Geography</h3>
+        </div>
+
+
+        <div class="subject" onclick="openSubject('History')">
+          <div class="subjectIcon">📜</div>
+          <h3>History</h3>
+        </div>
+
+
+        <div class="subject" onclick="openSubject('ICT')">
+          <div class="subjectIcon">💻</div>
+          <h3>ICT</h3>
+        </div>
+
+
+        <div class="subject" onclick="openSubject('Exam Preparation')">
+          <div class="subjectIcon">📝</div>
+          <h3>Exam Prep</h3>
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>© 2026 SLTI Students</p>
+
+    <p>
+      Learn • Practice • Succeed 🎓
+    </p>
+
+  </footer>
+
+
+  <script>
+
+    let selectedGrade = 9;
+
+
+    function openSubjects(grade) {
+
+      selectedGrade = grade;
+
+      document.getElementById("homePage").style.display = "none";
+
+      document.getElementById("subjectsPage").style.display = "block";
+
+      document.getElementById("gradeTitle").innerHTML =
+        "📚 " + grade + "ኛ ክፍል";
+
+      window.scrollTo(0, 0);
+    }
+
+
+    function goHome() {
+
+      document.getElementById("subjectsPage").style.display = "none";
+
+      document.getElementById("homePage").style.display = "block";
+
+      window.scrollTo(0, 0);
+    }
+
+
+    function openSubject(subject) {
+
+      alert(
+        "🎓 " + selectedGrade + "ኛ ክፍል\n\n" +
+        "📚 " + subject +
+        "\n\nቀጣዩ ደረጃ የዚህን ትምህርት ምዕራፎች እና ትምህርቶች መጨመር ነው።"
+      );
+
+    }
+
+  </script>
+
+</body>
+</html>
